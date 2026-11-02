@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Single Bet Placement" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-29T12:38:18.908Z" hostname="LAPTOP-BKJV3EAJ" time="6.819">
+  <properties/>
+  <testcase name="Single Bet Placement - Place bet on Manchester Utd vs Chelsea - E2E UI test" classname="feature_classpath_features/sportsBetting.feature" time="6.816"/>
+  <system-out><![CDATA[
+Scenario: Place bet on Manchester Utd vs Chelsea - E2E UI test          ?[90m# features/sportsBetting.feature:5?[0m
+  ?[32mGiven ?[0m?[32mI navigate to sports betting app?[0m                                ?[90m# stepdefinitions.SportsBettingStepDefinitions.the_user_is_on_the_login_page()?[0m
+  ?[32mGiven ?[0m?[32mI navigate to sports betting app?[0m                                ?[90m# stepdefinitions.SportsBettingStepDefinitions.the_user_is_on_the_login_page()?[0m
+  ?[32mAnd ?[0m?[32mI validate the sports bet UI?[0m                                      ?[90m# stepdefinitions.SportsBettingStepDefinitions.validate_sports_bet_ui()?[0m
+  ?[32mAnd ?[0m?[32mI select odd on ?[0m?[32m?[1m"home"?[0m?[32m for ?[0m?[32m?[1m"manutd-chelsea"?[0m                       ?[90m# stepdefinitions.SportsBettingStepDefinitions.place_bet(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI validate bet slip generated?[0m                                     ?[90m# stepdefinitions.SportsBettingStepDefinitions.validate_bet_slip_generated()?[0m
+  ?[32mAnd ?[0m?[32mI enter stake ?[0m?[32m?[1m"1"?[0m?[32m validate potential payout ?[0m?[32m?[1m"€2.45"?[0m?[32m and place bet?[0m ?[90m# stepdefinitions.SportsBettingStepDefinitions.place_bet_with_stake(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI validate if bet placed successfully?[0m                             ?[90m# stepdefinitions.SportsBettingStepDefinitions.validate_if_bet_placed_successfully()?[0m
+]]></system-out>
+  <system-err><![CDATA[Oct 29, 2026 6:08:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 156
+Oct 29, 2026 6:08:20 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 156.0.8078.49. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>

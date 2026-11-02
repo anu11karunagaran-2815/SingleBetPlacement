@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+group = 'com.automation'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+dependencies {
+    // Cucumber BDD Engine
+    testImplementation 'io.cucumber:cucumber-java:7.20.1'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.20.1'
+    
+    // JUnit 5 Platform Suite (Modern runner platform)
+    testImplementation 'org.junit.platform:junit-platform-suite:1.11.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
+    testImplementation 'io.cucumber:cucumber-java:7.15.0'
+    
+    // Selenium Web Driver
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.25.0'
+
+    // REST Assured for making API calls and assertions
+    testImplementation 'io.rest-assured:rest-assured:5.5.0'
+
+    // Cucumber Java for writing BDD step definitions
+    testImplementation 'io.cucumber:cucumber-java:7.20.1'
+
+    // Cucumber JUnit for running the feature files
+    testImplementation 'io.cucumber:cucumber-junit:7.20.1'
+
+    // Jackson Databind for JSON parsing/serialization (highly recommended)
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.18.0'
+
+    // JUnit 5 (or JUnit 4 depending on your test runner setup)
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.0'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty "cucumber.junit-platform.naming-strategy", "long"
+}

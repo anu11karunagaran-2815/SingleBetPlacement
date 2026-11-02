@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Sports Betting API test" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-29T12:38:25.731Z" hostname="LAPTOP-BKJV3EAJ" time="10.94">
+  <properties/>
+  <testcase name="Sports Betting API test - GET matches" classname="feature_classpath_features/sportsBettingAPI.feature" time="4.657"/>
+  <testcase name="Sports Betting API test - GET balance" classname="feature_classpath_features/sportsBettingAPI.feature" time="1.713"/>
+  <testcase name="Sports Betting API test - Reset balance" classname="feature_classpath_features/sportsBettingAPI.feature" time="2.839"/>
+  <testcase name="Sports Betting API test - Place Bet" classname="feature_classpath_features/sportsBettingAPI.feature" time="1.729"/>
+  <system-out><![CDATA[
+Scenario: GET matches                                                                   ?[90m# features/sportsBettingAPI.feature:8?[0m
+  ?[32mGiven ?[0m?[32mthe API base URI is ?[0m?[32m?[1m"https://qae-assignment-tau.vercel.app"?[0m                     ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setBaseUri(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe header is set ?[0m?[32m?[1m"candidate-qCuwBbnORjUW"?[0m                                        ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setHeaders(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe content type header is set to JSON?[0m                                            ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setContentType()?[0m
+  ?[32mWhen ?[0m?[32ma GET request is sent to ?[0m?[32m?[1m"/api/matches"?[0m                                          ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.sendGetRequest(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m                                           ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mI validate the response body matches json content ?[0m?[32m?[1m"TestData/matchesResponse.json"?[0m ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyResponseBodyMatchesJsonFile(java.lang.String)?[0m
+
+Scenario: GET balance                                               ?[90m# features/sportsBettingAPI.feature:13?[0m
+  ?[32mGiven ?[0m?[32mthe API base URI is ?[0m?[32m?[1m"https://qae-assignment-tau.vercel.app"?[0m ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setBaseUri(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe header is set ?[0m?[32m?[1m"candidate-qCuwBbnORjUW"?[0m                    ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setHeaders(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe content type header is set to JSON?[0m                        ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setContentType()?[0m
+  ?[32mWhen ?[0m?[32ma GET request is sent to ?[0m?[32m?[1m"/api/balance"?[0m                      ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.sendGetRequest(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m                       ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyStatusCode(int)?[0m
+
+Scenario: Reset balance                                                           ?[90m# features/sportsBettingAPI.feature:17?[0m
+  ?[32mGiven ?[0m?[32mthe API base URI is ?[0m?[32m?[1m"https://qae-assignment-tau.vercel.app"?[0m               ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setBaseUri(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe header is set ?[0m?[32m?[1m"candidate-qCuwBbnORjUW"?[0m                                  ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setHeaders(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe content type header is set to JSON?[0m                                      ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setContentType()?[0m
+  ?[32mWhen ?[0m?[32ma POST request is sent to ?[0m?[32m?[1m"/api/reset-balance"?[0m                             ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.postRequestTo(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m                                     ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response body field ?[0m?[32m?[1m"message"?[0m?[32m should match ?[0m?[32m?[1m"Balance reset successfully"?[0m ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyResponseBodyField(java.lang.String,java.lang.String)?[0m
+
+Scenario: Place Bet                                                            ?[90m# features/sportsBettingAPI.feature:23?[0m
+  ?[32mGiven ?[0m?[32mthe API base URI is ?[0m?[32m?[1m"https://qae-assignment-tau.vercel.app"?[0m            ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setBaseUri(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe header is set ?[0m?[32m?[1m"candidate-qCuwBbnORjUW"?[0m                               ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setHeaders(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mthe content type header is set to JSON?[0m                                   ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.setContentType()?[0m
+  ?[32mWhen ?[0m?[32ma POST request is sent to ?[0m?[32m?[1m"/api/place-bet"?[0m?[32m with body:?[0m                   ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.sendPostRequest(java.lang.String,java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m                                  ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response body field ?[0m?[32m?[1m"message"?[0m?[32m should match ?[0m?[32m?[1m"Bet placed successfully"?[0m ?[90m# stepdefinitions.SportsBettingAPIStepDefinitions.verifyResponseBodyField(java.lang.String,java.lang.String)?[0m
+]]></system-out>
+  <system-err><![CDATA[Oct 29, 2026 6:08:27 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 156
+Oct 29, 2026 6:08:27 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 156.0.8078.49. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Oct 29, 2026 6:08:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 156
+Oct 29, 2026 6:08:31 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 156.0.8078.49. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Oct 29, 2026 6:08:32 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 156
+Oct 29, 2026 6:08:32 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 156.0.8078.49. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Oct 29, 2026 6:08:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 156
+Oct 29, 2026 6:08:35 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 156.0.8078.49. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
